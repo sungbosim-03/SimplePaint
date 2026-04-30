@@ -40,11 +40,13 @@
             btnOpenFile = new Button();
             btnSaveFile = new Button();
             picCanvas = new PictureBox();
+            pnlCanvas = new Panel();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trbLineWidth).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picCanvas).BeginInit();
+            pnlCanvas.SuspendLayout();
             SuspendLayout();
             // 
             // lblAppName
@@ -164,18 +166,29 @@
             // picCanvas
             // 
             picCanvas.BackColor = Color.White;
-            picCanvas.Location = new Point(19, 210);
+            picCanvas.Location = new Point(0, 0);
             picCanvas.Name = "picCanvas";
             picCanvas.Size = new Size(880, 281);
+            picCanvas.SizeMode = PictureBoxSizeMode.StretchImage;
             picCanvas.TabIndex = 7;
             picCanvas.TabStop = false;
+            // 
+            // pnlCanvas
+            // 
+            pnlCanvas.AutoScroll = true;
+            pnlCanvas.BackColor = Color.LightGray;
+            pnlCanvas.Controls.Add(picCanvas);
+            pnlCanvas.Location = new Point(19, 210);
+            pnlCanvas.Name = "pnlCanvas";
+            pnlCanvas.Size = new Size(880, 281);
+            pnlCanvas.TabIndex = 8;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(938, 503);
-            Controls.Add(picCanvas);
+            Controls.Add(pnlCanvas);
             Controls.Add(btnSaveFile);
             Controls.Add(btnOpenFile);
             Controls.Add(groupBox3);
@@ -190,6 +203,7 @@
             groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)trbLineWidth).EndInit();
             ((System.ComponentModel.ISupportInitialize)picCanvas).EndInit();
+            pnlCanvas.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -208,5 +222,6 @@
         private Button btnSaveFile;
         private TrackBar trbLineWidth;
         private PictureBox picCanvas;
+        private Panel pnlCanvas;
     }
 }
